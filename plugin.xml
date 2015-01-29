@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
+
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="com.exmachina.tts.ttsPLUGIN"
         version="1.0.2">
-=======
-<plugin xmlns:android="http://schemas.android.com/apk/res/android"  id="com.exmachina.tts.ttsPLUGIN" version="1.0.2">
->>>>>>> origin/master
-    <name>TTSplug</name>
+
+    <plugin xmlns:android="http://schemas.android.com/apk/res/android"  id="com.exmachina.tts.ttsPLUGIN" version="1.0.2">
+
+        <name>TTSplug</name>
       
       
       
-    <engines>
-        <engine name="cordova" version=">=2.7.0" />
-    </engines>
+        <engines>
+            <engine name="cordova" version=">=2.7.0" />
+        </engines>
 
       
       
-    <description>
-        plugin for steroidss
-    </description>
+        <description>
+            plugin for steroidss
+        </description>
       
       
-    <js-module src="www/tts.js" name="ttsPLUGIN">
-        <clobbers target="ttsPLUGIN" />
-    </js-module>
+        <js-module src="www/tts.js" name="ttsPLUGIN">
+            <clobbers target="ttsPLUGIN" />
+        </js-module>
 	
       
-    <platform name="android">
+        <platform name="android">
 
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ttsPLUGIN">
-                <param name="android-package" value="com.exmachina.tts.ttsPLUGIN" />
-            </feature>
-        </config-file>
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="ttsPLUGIN">
+                    <param name="android-package" value="com.exmachina.tts.ttsPLUGIN" />
+                </feature>
+            </config-file>
 
 		
 	
-        <source-file src="src/android/com/exmachina/tts/ttsPLUGIN.java" target-dir="src/com/exmachina/tts/" />
+            <source-file src="src/android/com/exmachina/tts/ttsPLUGIN.java" target-dir="src/com/exmachina/tts/" />
 		
 
-    </platform>
+        </platform>
+    </plugin>
 </plugin>
+</xml>
+
