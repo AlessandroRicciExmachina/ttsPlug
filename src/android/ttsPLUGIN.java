@@ -1,4 +1,4 @@
-package com.exmachina.tts;
+package org.apache.cordova;
 
 import java.util.Locale;
 
