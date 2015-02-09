@@ -16,7 +16,7 @@
               <param name="android-package" value="org.apache.cordova.ttsPLUGIN"/>
         </config-file>
 
-        <source-file src="src/android/ttsPLUGIN.java" target-dir="org/apache/cordova/ttsPLUGIN" />
+        <source-file src="src/android/ttsPLUGIN.java" target-dir="org/apache/cordova/" />
     </platform>
 
 </plugin>
