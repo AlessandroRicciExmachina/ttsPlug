@@ -4,42 +4,20 @@
         id="com.exmachina.tts.ttsPLUGIN"
         version="1.0.2">
 
-    <plugin xmlns:android="http://schemas.android.com/apk/res/android"  id="com.exmachina.tts.ttsPLUGIN" version="1.0.2">
+    <name>TTS</name>
+    <description>TTS PLUGIN</description>
+    
+    <js-module src="www/tts.js" name="tts">
+       
+    </js-module>
+    
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+           
+        </config-file>
 
-        <name>TTSplug</name>
-      
-      
-      
-        <engines>
-            <engine name="cordova" version=">=2.7.0" />
-        </engines>
+        <source-file src="src/android/ttsPLUGIN.java" target-dir="src/org/apache/cordova/ttsPLUGIN" />
+    </platform>
 
-      
-      
-        <description>
-            plugin for steroidss
-        </description>
-      
-      
-        <js-module src="www/tts.js" name="ttsPLUGIN">
-            <clobbers target="ttsPLUGIN" />
-        </js-module>
-	
-      
-        <platform name="android">
-
-            <config-file target="res/xml/config.xml" parent="/*">
-                <feature name="ttsPLUGIN">
-                    <param name="android-package" value="com.exmachina.tts.ttsPLUGIN" />
-                </feature>
-            </config-file>
-
-		
-	
-            <source-file src="src/android/com/exmachina/tts/ttsPLUGIN.java" target-dir="src/com/exmachina/tts/" />
-		
-
-        </platform>
-    </plugin>
 </plugin>
 
