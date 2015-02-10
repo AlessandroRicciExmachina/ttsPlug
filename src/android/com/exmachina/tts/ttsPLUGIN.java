@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 
-public class ttsPLUGIN extends CordovaPlugin {
+public class ttsCall extends CordovaPlugin {
 
 	
 	public TextToSpeech tts;
