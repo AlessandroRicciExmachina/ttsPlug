@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="org.exmachina.tts"
+        id="com.exmachina.tts"
         version="1.0.2">
 
     <name>TTS</name>
@@ -15,13 +15,13 @@
         <config-file target="res/xml/config.xml" parent="/*">
             
             <feature name="tts">
-                <param name="android-package" value="org.exmachina.tts" />
+                <param name="android-package" value="com.exmachina.tts" />
             </feature>
             
        
         </config-file>
 
-        <source-file src="src/android/ttsPLUGIN.java" target-dir="src/org/exmachina/tts" />
+        <source-file src="src/android/com/exmachina/tts/ttsPLUGIN.java" target-dir="src/com/exmachina/tts" />
     </platform>
 
 </plugin>

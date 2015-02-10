@@ -1,4 +1,4 @@
-package org.exmachina.tts;
+package com.exmachina.tts;
 
 import java.util.Locale;
 
