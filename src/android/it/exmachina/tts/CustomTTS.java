@@ -14,15 +14,13 @@ import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 
 public class CustomTTS extends CordovaPlugin {
-
 	
 	public TextToSpeech tts;
 	public Intent intent;
 	private ListView resultList;
 	private Context contesto;
 
-
-
+	
 	@Override
 	public boolean execute(String action, final JSONArray args1,CallbackContext callbackContext) throws JSONException {
 
@@ -39,8 +37,16 @@ public class CustomTTS extends CordovaPlugin {
 							
 								JSONObject test = args1.getJSONObject(0);
 								String a = test.getString("result");
-								System.out.println(Locale.getDefault());
-								tts.setLanguage(Locale.ITALY);
+								String b = test.getString("language");
+								
+								if(b.equals("italiano")) {	tts.setLanguage(Locale.ITALIAN); }
+								if(b.equals("inglese"))  { 	tts.setLanguage(Locale.ENGLISH); }
+								if(b.equals("francese")) { 	tts.setLanguage(Locale.FRENCH);  }
+								if(b.equals("tedesco"))  {  tts.setLanguage(Locale.GERMAN);  }
+								if(b.equals("spagnolo")) {  tts.setLanguage(Locale.ITALIAN); }
+								
+//								System.out.println(Locale.getDefault());
+								
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
 								
 							} catch (JSONException e) {
