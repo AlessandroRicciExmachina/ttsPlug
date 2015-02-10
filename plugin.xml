@@ -16,7 +16,7 @@
             <param name="android-package" value="org.apache.pluginTTS.ttsPLUGIN"/>
         </config-file>
 
-        <source-file src="android/ttsPLUGIN.java" target-dir="org/apache/pluginTTS" />
+        <source-file src="src/android/ttsPLUGIN.java" target-dir="org/apache/pluginTTS" />
     </platform>
 
 </plugin>
