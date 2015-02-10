@@ -20,9 +20,9 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             
-         <feature name="CustomTTS">
-        <param name="android-package" value="it.exmachina.tts.CustomTTS" />
-    </feature>
+            <feature name="CustomTTS">
+                <param name="android-package" value="it.exmachina.tts.CustomTTS" />
+            </feature>
                    
         </config-file>
 
