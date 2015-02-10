@@ -1,4 +1,4 @@
-package org.apache.cordova;
+package org.apache.pluginTTS;
 
 import java.util.Locale;
 
