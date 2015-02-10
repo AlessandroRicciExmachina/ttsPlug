@@ -1,4 +1,4 @@
-package com.exmachina.tts;
+package it.exmachina.tts;
 
 import java.util.Locale;
 
@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 
-public class ttsCall extends CordovaPlugin {
+public class CustomTTS extends CordovaPlugin {
 
 	
 	public TextToSpeech tts;
