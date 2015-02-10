@@ -14,7 +14,7 @@
     </engines>
     
     <js-module src="www/tts.js" name="tts">
-        <clobbers target="tts" />
+        <clobbers target="ttsCall" />
     </js-module>
     
     <platform name="android">
