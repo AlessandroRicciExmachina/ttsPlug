@@ -28,6 +28,22 @@
 
         <source-file src="src/android/it/exmachina/tts/CustomTTS.java" target-dir="src/it/exmachina/tts" />
     </platform>
+    
+    
+    <platform name="ios">
+      
+        <config-file target="config.xml" parent="/*">
+            <feature name="ttsPlug">
+                <param name="ios-package" value="ttsPlug" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/ttsPlug.h" />
+        <source-file src="src/ios/ttsPlug.m" />
+        <framework src="AVFoundation" />
+       
+    </platform> 
+    
+    
 
 </plugin>
 
