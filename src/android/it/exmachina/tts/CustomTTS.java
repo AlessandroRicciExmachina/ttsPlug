@@ -35,9 +35,11 @@ public class CustomTTS extends CordovaPlugin {
 
 							try {
 							
-								JSONObject test = args1.getJSONObject(0);
-								String a = test.getString("result");
-								String b = test.getString("language");
+								System.out.println(args1)
+								JSONObject testo = args1.getJSONObject(0);
+								System.out.println(testo)
+								String a = testo.getString("result");
+								String b = testo.getString("language");
 								
 								if(b.equals("italiano")) {	tts.setLanguage(Locale.ITALIAN); }
 								if(b.equals("inglese"))  { 	tts.setLanguage(Locale.ENGLISH); }
