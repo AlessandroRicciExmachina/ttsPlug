@@ -35,9 +35,9 @@ public class CustomTTS extends CordovaPlugin {
 
 							try {
 							
-								System.out.println(args1)
+								System.out.println(args1);
 								JSONObject testo = args1.getJSONObject(0);
-								System.out.println(testo)
+								System.out.println(testo);
 								String a = testo.getString("result");
 								String b = testo.getString("language");
 								
