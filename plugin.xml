@@ -33,12 +33,12 @@
     <platform name="ios">
       
         <config-file target="config.xml" parent="/*">
-            <feature name="ttsPlug">
-                <param name="ios-package" value="ttsPlug" />
+            <feature name="CustomTTS">
+                <param name="ios-package" value="CustomTTS" />
             </feature>
         </config-file>
-        <header-file src="src/ios/ttsPlug.h" />
-        <source-file src="src/ios/ttsPlug.m" />
+        <header-file src="src/ios/CustomTTS.h" />
+        <source-file src="src/ios/CustomTTS.m" />
         <framework src="AVFoundation" />
        
     </platform> 
