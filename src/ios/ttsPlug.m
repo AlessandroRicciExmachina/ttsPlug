@@ -11,9 +11,9 @@
  #import <AVFoundation/AVFoundation.h>
 
 
-@implementation ttsPlug
+@implementation CustomTTS
 
--(void)CustomTTS:(CDVInvokedUrlCommand*)command {
+-(void)start:(CDVInvokedUrlCommand*)command {
    
     [self.commandDelegate runInBackground:^{
        

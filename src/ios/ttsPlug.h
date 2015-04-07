@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Cordova/CDVPlugin.h>
-@interface  ttsPlug : CDVPlugin
+@interface  CustomTTS : CDVPlugin
 
--(void)CustomTTS:(CDVInvokedUrlCommand*)command;
+-(void)start:(CDVInvokedUrlCommand*)command;
 
 @end
