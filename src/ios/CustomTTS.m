@@ -18,7 +18,7 @@
     [self.commandDelegate runInBackground:^{
        
     NSString* myarg = [command.arguments objectAtIndex:1];
-    myarg = ['asdrubale'];
+
         AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:myarg];
         [utterance setRate:0.25f];
         AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
