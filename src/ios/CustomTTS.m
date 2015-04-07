@@ -7,11 +7,11 @@
 //
 
  #import <Cordova/CDV.h>
- #import "ttsPlug.h"
+ #import "CustomTTS.h"
  #import <AVFoundation/AVFoundation.h>
 
 
-@implementation ttsPlug
+@implementation CustomTTS
 
 -(void)start:(CDVInvokedUrlCommand*)command {
    
