@@ -11,7 +11,7 @@
  #import <AVFoundation/AVFoundation.h>
 
 
-@implementation CustomTTS
+@implementation ttsPlug
 
 -(void)start:(CDVInvokedUrlCommand*)command {
    
