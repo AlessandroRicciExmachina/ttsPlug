@@ -13,7 +13,7 @@
 
 @implementation ttsPlug
 
--(void)ttsStart:(CDVInvokedUrlCommand*)command {
+-(void)CustomTTS:(CDVInvokedUrlCommand*)command {
    
     [self.commandDelegate runInBackground:^{
        

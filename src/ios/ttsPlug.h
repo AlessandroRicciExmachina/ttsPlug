@@ -10,6 +10,6 @@
 #import <Cordova/CDVPlugin.h>
 @interface  ttsPlug : CDVPlugin
 
--(void)ttsStart:(CDVInvokedUrlCommand*)command;
+-(void)CustomTTS:(CDVInvokedUrlCommand*)command;
 
 @end
