@@ -18,7 +18,7 @@
     [self.commandDelegate runInBackground:^{
        
     NSString* myarg = [command.arguments objectAtIndex:1];
-        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"nel mezzo del cammin"];
+        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:myarg];
         [utterance setRate:0.25f];
         AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
         [synth speakUtterance:utterance];
