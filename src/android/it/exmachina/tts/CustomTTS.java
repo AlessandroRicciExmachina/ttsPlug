@@ -52,11 +52,8 @@ public class CustomTTS extends CordovaPlugin {
 //								System.out.println(Locale.getDefault());
 								
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
-								PluginResult result = new PluginResult(PluginResult.Status.OK, "YOUR_MESSAGE");
-// PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
-result.setKeepCallback(true);
-callbackContext.sendPluginResult(result);
-								
+
+								   callbackContext.success("ok");
 								
 									return true;
 							
