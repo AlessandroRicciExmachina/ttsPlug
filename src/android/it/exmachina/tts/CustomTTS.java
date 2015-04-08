@@ -19,14 +19,14 @@ public class CustomTTS extends CordovaPlugin {
 	public Intent intent;
 	private ListView resultList;
 	private Context contesto;
-
+        private String azione;
 
 	
 	@Override
 	public boolean execute(String action, final JSONArray args1,final CallbackContext callbackContext) throws JSONException {
 
 	//	System.out.println("azione:" + action);
-
+this.azione=action;
 		if (action.equals("start")) {
 
 			this.tts = new TextToSpeech(getApplicationContext(),
@@ -54,11 +54,11 @@ public class CustomTTS extends CordovaPlugin {
 								if(!tts.isSpeaking()){
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null );
 								
-							//	   while(tts.isSpeaking()){
+							   while(tts.isSpeaking()){
 									   
-							//		   System.out.println("is speaking");
+									   System.out.println(azione);
 									   
-							//	   }
+								   }
 								   PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
 						             result.setKeepCallback(true);
 						             callbackContext.sendPluginResult(result);
