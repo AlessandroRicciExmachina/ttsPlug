@@ -54,11 +54,11 @@ public class CustomTTS extends CordovaPlugin {
 								if(!tts.isSpeaking()){
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null );
 								
-								   while(tts.isSpeaking()){
+							//	   while(tts.isSpeaking()){
 									   
-									   System.out.println("is speaking");
+							//		   System.out.println("is speaking");
 									   
-								   }
+							//	   }
 								   PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
 						             result.setKeepCallback(true);
 						             callbackContext.sendPluginResult(result);
