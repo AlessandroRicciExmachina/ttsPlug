@@ -12,6 +12,7 @@
 
 
 @implementation CustomTTS
+@property (nonatomic, strong) AVSpeechSynthesizer* talker;
 
 -(void)start:(CDVInvokedUrlCommand*)command {
    
