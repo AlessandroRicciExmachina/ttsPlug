@@ -12,7 +12,7 @@
 
 
 @implementation CustomTTS
-@property (nonatomic, strong) AVSpeechSynthesizer* talker;
+
 
 -(void)start:(CDVInvokedUrlCommand*)command {
    
@@ -21,7 +21,7 @@
    
     [self.commandDelegate runInBackground:^{
        
-
+AVSpeechSynthesizer* talker;
   
       AVSpeechUtterance* utter = [[AVSpeechUtterance alloc] initWithString:myarg];
     utter.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
