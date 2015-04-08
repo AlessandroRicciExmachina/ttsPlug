@@ -22,7 +22,7 @@ public class CustomTTS extends CordovaPlugin {
 
 	
 	@Override
-	public boolean execute(String action, final JSONArray args1,CallbackContext callbackContext) throws JSONException {
+	public boolean execute(String action, final JSONArray args1,final CallbackContext callbackContext) throws JSONException {
 
 	//	System.out.println("azione:" + action);
 
