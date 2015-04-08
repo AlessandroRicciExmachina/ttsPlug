@@ -19,7 +19,7 @@ public class CustomTTS extends CordovaPlugin {
 	public Intent intent;
 	private ListView resultList;
 	private Context contesto;
-	private TextToSpeech tts;
+
 
 	
 	@Override
