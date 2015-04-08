@@ -50,8 +50,10 @@ public class CustomTTS extends CordovaPlugin {
 								if(b.equals("spagnolo")) {  tts.setLanguage(Locale.ITALIAN); }
 								
 //								System.out.println(Locale.getDefault());
-								
+									if(!tts.isSpeaking()){
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
+								
+									} 
 	                                                PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
 					                result.setKeepCallback(true);
 					                callbackContext.sendPluginResult(result);
