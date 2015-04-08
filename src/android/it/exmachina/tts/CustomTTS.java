@@ -55,18 +55,19 @@ public class CustomTTS extends CordovaPlugin {
 
 								   callbackContext.success("ok");
 								
-									return true;
+								
 							
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
-								return false;
+							
 								
 							}
 							
 						
 						}
 					});
+						return true;
 
 		}
 
