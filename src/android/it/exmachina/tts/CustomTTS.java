@@ -82,7 +82,7 @@ public class CustomTTS extends CordovaPlugin {
 		}
 		if (action.equals("stop")) {
 			
-		this.tts.speak( "asd" , TextToSpeech.QUEUE_FLUSH, null );
+		this.tts.stop();
 			
 			
 		}
