@@ -19,6 +19,7 @@ public class CustomTTS extends CordovaPlugin {
 	public Intent intent;
 	private ListView resultList;
 	private Context contesto;
+	private TextToSpeech tts;
 
 	
 	@Override
@@ -28,7 +29,7 @@ public class CustomTTS extends CordovaPlugin {
 
 		if (action.equals("start")) {
 
-			tts = new TextToSpeech(getApplicationContext(),
+			this.tts = new TextToSpeech(getApplicationContext(),
 					new TextToSpeech.OnInitListener() {
 						@Override
 						public void onInit(int status) {
@@ -81,7 +82,7 @@ public class CustomTTS extends CordovaPlugin {
 		}
 		if (action.equals("stop")) {
 			
-			tts = new TextToSpeech(getApplicationContext(),
+			this.tts = new TextToSpeech(getApplicationContext(),
 					new TextToSpeech.OnInitListener() {	@Override
 						public void onInit(int status) {
 							
