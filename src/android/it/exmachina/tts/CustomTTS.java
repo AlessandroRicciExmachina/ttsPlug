@@ -7,7 +7,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import org.apache.cordova.PluginResult;
 import android.content.Context;
 import android.content.Intent;
 import android.speech.tts.TextToSpeech;
@@ -52,9 +52,9 @@ public class CustomTTS extends CordovaPlugin {
 //								System.out.println(Locale.getDefault());
 								
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
-
-								   callbackContext.success("ok");
-								
+	                                                PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
+					                result.setKeepCallback(true);
+					                callbackContext.sendPluginResult(result);
 								
 							
 							} catch (JSONException e) {
