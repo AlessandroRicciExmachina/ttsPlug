@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Cordova/CDVPlugin.h>
 @interface  CustomTTS : CDVPlugin
-
+@property (nonatomic, strong) AVSpeechSynthesizer* talker;
 -(void)start:(CDVInvokedUrlCommand*)command;
 
 @end
