@@ -79,6 +79,21 @@ public class CustomTTS extends CordovaPlugin {
 					
 
 		}
+		if (action.equals("stop")) {
+			
+			tts = new TextToSpeech(getApplicationContext(),
+					new TextToSpeech.OnInitListener() {
+						@Override
+						public void onInit(int status) {
+
+						tts.stop();
+							
+						
+						}
+					});
+			
+			
+		}
 
 		return true;
 
