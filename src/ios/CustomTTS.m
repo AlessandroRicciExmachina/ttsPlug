@@ -21,18 +21,15 @@
     [self.commandDelegate runInBackground:^{
        
 
-   [utterance setRate:0.25f];
-         AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-         [synth speakUtterance:utterance];
-      
-         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        
-        
-        
+  
+        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:myarg];
+        [utterance setRate:0.25f];
+        AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
+        [synth speakUtterance:utterance];
         
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        
     
     }];
     
