@@ -54,16 +54,23 @@ this.azione=action;
 								if(!tts.isSpeaking()){
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null );
 								
-							   while(tts.isSpeaking()){
-									   
-									   System.out.println(azione);
-									   
-								   }
-								   PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
-						             result.setKeepCallback(true);
-						             callbackContext.sendPluginResult(result);
-								
-								}
+							 	if (!tts.isSpeaking()) {
+									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+									new Thread(new Runnable() {
+								        public void run() {
+								        	while (tts.isSpeaking()) {
+
+																				
+												System.out.println(azione);
+
+											}
+								        }
+								    }).start();
+									
+									PluginResult result = new PluginResult(
+											PluginResult.Status.OK, "ok");
+									result.setKeepCallback(true);
+									callbackContext.sendPluginResult(result);
 	                                             
 								
 							
