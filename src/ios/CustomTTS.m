@@ -27,7 +27,7 @@
         AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
         [synth speakUtterance:utterance];
         
-         while([synth isSpeaking]) {
+         while([[[synth speak]speechSynth] isSpeaking]) {
     
          }
         
