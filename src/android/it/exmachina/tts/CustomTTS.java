@@ -24,7 +24,7 @@ public class CustomTTS extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, final JSONArray args1,CallbackContext callbackContext) throws JSONException {
 
-		System.out.println("azione:" + action);
+	//	System.out.println("azione:" + action);
 
 		if (action.equals("start")) {
 
@@ -35,11 +35,11 @@ public class CustomTTS extends CordovaPlugin {
 
 							try {
 							
-								System.out.println(args1);
+							//	System.out.println(args1);
 								JSONObject testo = args1.getJSONObject(0);
-								System.out.println(testo);
+							//	System.out.println(testo);
 								JSONObject testoToSpeak = args1.getJSONObject(1);
-								System.out.println(testoToSpeak);
+								//System.out.println(testoToSpeak);
 								String a = testoToSpeak.getString("result");
 								String b = testo.getString("language");
 								
@@ -52,10 +52,13 @@ public class CustomTTS extends CordovaPlugin {
 //								System.out.println(Locale.getDefault());
 								
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
+									return true;
 							
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
+								return false;
+								
 							}
 							
 						
@@ -66,7 +69,7 @@ public class CustomTTS extends CordovaPlugin {
 
 	
 
-		return true;
+	
 
 	}
 
