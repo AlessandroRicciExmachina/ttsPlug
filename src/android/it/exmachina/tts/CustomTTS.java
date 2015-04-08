@@ -52,6 +52,9 @@ public class CustomTTS extends CordovaPlugin {
 //								System.out.println(Locale.getDefault());
 								
 								tts.speak( a , TextToSpeech.QUEUE_FLUSH, null);
+									callbackContext.success();
+								
+								
 									return true;
 							
 							} catch (JSONException e) {
