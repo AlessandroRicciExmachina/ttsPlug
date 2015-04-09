@@ -35,7 +35,7 @@ public class CustomTTS extends CordovaPlugin {
 						public void onInit(int status) {
 
 							try {
-                                                                tts.stop();
+                                                              
 								// System.out.println(args1);
 								JSONObject testo = args1.getJSONObject(0);
 								// System.out.println(testo);
@@ -62,7 +62,7 @@ public class CustomTTS extends CordovaPlugin {
 								}
 
 								// System.out.println(Locale.getDefault());
-								if (!tts.isSpeaking()) {
+								
 									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
 									new Thread(new Runnable() {
 								        public void run() {
@@ -79,14 +79,8 @@ public class CustomTTS extends CordovaPlugin {
 								        }
 								    }).start();
 									
-									
 
-								}else{
-									
-									
-									System.out.println("speak");	
-									
-								}
+							
 
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
