@@ -13,6 +13,9 @@
 
 @implementation CustomTTS
 
+AVSpeechSynthesizer* talker;
+
+
 
 -(void)start:(CDVInvokedUrlCommand*)command {
    
