@@ -35,7 +35,7 @@ public class CustomTTS extends CordovaPlugin {
 						public void onInit(int status) {
 
 							try {
-this.tts.stop();
+                                                                tts.stop();
 								// System.out.println(args1);
 								JSONObject testo = args1.getJSONObject(0);
 								// System.out.println(testo);
