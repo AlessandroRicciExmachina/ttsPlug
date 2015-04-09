@@ -16,5 +16,5 @@ AVSpeechSynthesizer* talker;
 
 }
 -(void)start:(CDVInvokedUrlCommand*)command;
-
+-(void)stop:(CDVInvokedUrlCommand*)command;
 @end
