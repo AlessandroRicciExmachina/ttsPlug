@@ -62,7 +62,7 @@ public class CustomTTS extends CordovaPlugin {
 								}
 
 								// System.out.println(Locale.getDefault());
-								if (!tts.isSpeaking()) {
+							//	if (!tts.isSpeaking()) {
 									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
 									new Thread(new Runnable() {
 								        public void run() {
@@ -81,12 +81,12 @@ public class CustomTTS extends CordovaPlugin {
 									
 									
 
-								}else{
-										tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+							//	}else{
+							//			tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
 									
-									System.out.println("speak");	
+							//		System.out.println("speak");	
 									
-								}
+							//	}
 
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
