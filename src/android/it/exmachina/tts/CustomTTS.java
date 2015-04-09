@@ -25,7 +25,7 @@ public class CustomTTS extends CordovaPlugin {
 	public boolean execute(String action, final JSONArray args1,
 			final CallbackContext callbackContext) throws JSONException {
 
-		// System.out.println("azione:" + action);
+		System.out.println("azione:" + action);
 		this.azione = action;
 		if (action.equals("start")) {
 
