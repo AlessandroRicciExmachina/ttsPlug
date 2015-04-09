@@ -32,9 +32,15 @@
        
     [talker speakUtterance:utter];
         
+        while([talker isSpeaking]){
+        
+        
+        
+        }
+        
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-      
+        talker=nil;
         
     }
   
