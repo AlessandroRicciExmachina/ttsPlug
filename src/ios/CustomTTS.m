@@ -32,23 +32,28 @@
        
     [talker speakUtterance:utter];
         
-        
-         while([talker isSpeaking]) {}
-         
-           CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
       
         
     }
   
-        
-       
-      
-        
-    
     }];
     
     
 }
+
+-(void)stop:(CDVInvokedUrlCommand*)command {
+
+ AVSpeechSynthesizer *talked = talker;
+    if([talked isSpeaking]) {
+        [talked stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@""];
+        [talked speakUtterance:utterance];
+        [talked stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+    }
+
+}
+
 
 @end
