@@ -25,19 +25,24 @@
 
   
       AVSpeechUtterance* utter = [[AVSpeechUtterance alloc] initWithString:myarg];
-    utter.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
+    utter.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"it-IT"];
     [utter setRate:0.2f];
     if (!talker) {
         talker = [AVSpeechSynthesizer new];
           talker.delegate = self;
     [talker speakUtterance:utter];
         
+        
+         while([talker isSpeaking]) {}
+         
+           CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        
     }
   
         
        
-        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+      
         
     
     }];
