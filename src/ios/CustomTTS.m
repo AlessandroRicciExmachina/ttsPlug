@@ -22,16 +22,16 @@
    
     [self.commandDelegate runInBackground:^{
        
-AVSpeechSynthesizer* talker;
+
   
       AVSpeechUtterance* utter = [[AVSpeechUtterance alloc] initWithString:myarg];
     utter.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
     [utter setRate:0.2f];
-    if (!self.talker) {
-        self.talker = [AVSpeechSynthesizer new];
+    if (!talker) {
+        talker = [AVSpeechSynthesizer new];
     }
-    self.talker.delegate = self;
-    [self.talker speakUtterance:utter];
+    talker.delegate = self;
+    [talker speakUtterance:utter];
         
        
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
