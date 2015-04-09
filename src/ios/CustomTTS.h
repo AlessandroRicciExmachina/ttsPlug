@@ -10,7 +10,11 @@
 #import <Cordova/CDVPlugin.h>
 #import <AVFoundation/AVFoundation.h>
 @interface  CustomTTS : CDVPlugin
+{
 
+AVSpeechSynthesizer* talker;
+
+}
 -(void)start:(CDVInvokedUrlCommand*)command;
 
 @end
