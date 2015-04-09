@@ -81,6 +81,11 @@ public class CustomTTS extends CordovaPlugin {
 									
 									
 
+								}else{
+									
+									
+									System.out.println("speak");	
+									
 								}
 
 							} catch (JSONException e) {
