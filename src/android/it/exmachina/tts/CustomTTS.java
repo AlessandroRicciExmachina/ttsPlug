@@ -13,14 +13,6 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 
-public class CustomTTS extends CordovaPlugin {
-
-	public TextToSpeech tts;
-	public Intent intent;
-	private ListView resultList;
-	private Context contesto;
-	private String azione;
-
 	@Override
 	public class CustomTTS extends CordovaPlugin {
 
@@ -130,4 +122,4 @@ public class CustomTTS extends CordovaPlugin {
 		}
 
 	}
-}
+
