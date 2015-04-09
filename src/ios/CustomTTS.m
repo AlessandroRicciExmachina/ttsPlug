@@ -57,6 +57,7 @@
         AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@""];
         [talked speakUtterance:utterance];
         [talked stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+         talker=nil;
     }
 
 }
