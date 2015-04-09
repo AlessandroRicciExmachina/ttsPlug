@@ -22,102 +22,111 @@ public class CustomTTS extends CordovaPlugin {
 	private String azione;
 
 	@Override
-	public boolean execute(String action, final JSONArray args1,
-			final CallbackContext callbackContext) throws JSONException {
+	public class CustomTTS extends CordovaPlugin {
 
-		System.out.println("azione:" + action);
-		this.azione = action;
-		if (action.equals("start")) {
+		public TextToSpeech tts;
+		public Intent intent;
+		private ListView resultList;
+		private Context contesto;
+		private String azione;
 
-			this.tts = new TextToSpeech(getApplicationContext(),
-					new TextToSpeech.OnInitListener() {
-						@Override
-						public void onInit(int status) {
+		@Override
+		public boolean execute(String action, final JSONArray args1,
+				final CallbackContext callbackContext) throws JSONException {
 
-							try {
-                                                              
-								// System.out.println(args1);
-								JSONObject testo = args1.getJSONObject(0);
-								// System.out.println(testo);
-								JSONObject testoToSpeak = args1
-										.getJSONObject(1);
-								// System.out.println(testoToSpeak);
-								String a = testoToSpeak.getString("result");
-								String b = testo.getString("language");
+			System.out.println("azione:" + action);
+			this.azione = action;
+			if (action.equals("start")) {
 
-								if (b.equals("italiano")) {
-									tts.setLanguage(Locale.ITALIAN);
-								}
-								if (b.equals("inglese")) {
-									tts.setLanguage(Locale.ENGLISH);
-								}
-								if (b.equals("francese")) {
-									tts.setLanguage(Locale.FRENCH);
-								}
-								if (b.equals("tedesco")) {
-									tts.setLanguage(Locale.GERMAN);
-								}
-								if (b.equals("spagnolo")) {
-									tts.setLanguage(Locale.ITALIAN);
-								}
+				this.tts = new TextToSpeech(getApplicationContext(),
+						new TextToSpeech.OnInitListener() {
+							@Override
+							public void onInit(int status) {
 
-								// System.out.println(Locale.getDefault());
-								
-								if (!tts.isSpeaking()) {
-+								
- 									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
- 									new Thread(new Runnable() {
- 								        public void run() {
- 								        	while (tts.isSpeaking()) {
- 
- 																				
- 												System.out.println(azione);
- 
- 											}
- 								        	PluginResult result = new PluginResult(
- 													PluginResult.Status.OK, "ok");
- 											result.setKeepCallback(true);
- 											callbackContext.sendPluginResult(result);
- 								        }
- 								    }).start();
- 									
--									
- 
--								}else{
--									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
--								
--									System.out.println("speakFirst");	
--									
--								}
+								try {
+	                                                              
+									// System.out.println(args1);
+									JSONObject testo = args1.getJSONObject(0);
+									// System.out.println(testo);
+									JSONObject testoToSpeak = args1
+											.getJSONObject(1);
+									// System.out.println(testoToSpeak);
+									String a = testoToSpeak.getString("result");
+									String b = testo.getString("language");
+
+									if (b.equals("italiano")) {
+										tts.setLanguage(Locale.ITALIAN);
+									}
+									if (b.equals("inglese")) {
+										tts.setLanguage(Locale.ENGLISH);
+									}
+									if (b.equals("francese")) {
+										tts.setLanguage(Locale.FRENCH);
+									}
+									if (b.equals("tedesco")) {
+										tts.setLanguage(Locale.GERMAN);
+									}
+									if (b.equals("spagnolo")) {
+										tts.setLanguage(Locale.ITALIAN);
+									}
+
+									// System.out.println(Locale.getDefault());
 									
+									if (!tts.isSpeaking()) {
+									
+	 									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+	 									new Thread(new Runnable() {
+	 								        public void run() {
+	 								        	while (tts.isSpeaking()) {
+	 
+	 																				
+	 												System.out.println(azione);
+	 
+	 											}
+	 								        	PluginResult result = new PluginResult(
+	 													PluginResult.Status.OK, "ok");
+	 											result.setKeepCallback(true);
+	 											callbackContext.sendPluginResult(result);
+	 								        }
+	 								    }).start();
+	 									
+										
+	 
+									}else{
+										tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+								
+										System.out.println("speakFirst");	
+										
+									}
+										
 
-							
+								
 
-							} catch (JSONException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
+								} catch (JSONException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+
+								}
 
 							}
+						});
 
-						}
-					});
+			}
+			if (action.equals("stop")) {
+
+				this.tts.stop();
+				PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
+				result.setKeepCallback(true);
+				callbackContext.sendPluginResult(result);
+
+			}
+
+			return true;
 
 		}
-		if (action.equals("stop")) {
 
-			this.tts.stop();
-			PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
-			result.setKeepCallback(true);
-			callbackContext.sendPluginResult(result);
-
+		private Context getApplicationContext() {
+			return this.cordova.getActivity().getApplicationContext();
 		}
 
-		return true;
-
 	}
-
-	private Context getApplicationContext() {
-		return this.cordova.getActivity().getApplicationContext();
-	}
-
-}
