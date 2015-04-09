@@ -63,21 +63,32 @@ public class CustomTTS extends CordovaPlugin {
 
 								// System.out.println(Locale.getDefault());
 								
-									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
-									new Thread(new Runnable() {
-								        public void run() {
-								        	while (tts.isSpeaking()) {
-
-																				
-												System.out.println(azione);
-
-											}
-								        	PluginResult result = new PluginResult(
-													PluginResult.Status.OK, "ok");
-											result.setKeepCallback(true);
-											callbackContext.sendPluginResult(result);
-								        }
-								    }).start();
+								if (!tts.isSpeaking()) {
++								
+ 									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+ 									new Thread(new Runnable() {
+ 								        public void run() {
+ 								        	while (tts.isSpeaking()) {
+ 
+ 																				
+ 												System.out.println(azione);
+ 
+ 											}
+ 								        	PluginResult result = new PluginResult(
+ 													PluginResult.Status.OK, "ok");
+ 											result.setKeepCallback(true);
+ 											callbackContext.sendPluginResult(result);
+ 								        }
+ 								    }).start();
+ 									
+-									
+ 
+-								}else{
+-									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+-								
+-									System.out.println("speakFirst");	
+-									
+-								}
 									
 
 							
