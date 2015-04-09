@@ -1,7 +1,4 @@
 package it.exmachina.tts;
-
-import java.util.Locale;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -122,4 +119,3 @@ import android.widget.ListView;
 		}
 
 	}
-
