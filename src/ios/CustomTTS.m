@@ -29,7 +29,7 @@
     [utter setRate:0.2f];
     if (!talker) {
         talker = [AVSpeechSynthesizer new];
-          talker.delegate = self;
+       
     [talker speakUtterance:utter];
         
         
@@ -37,7 +37,7 @@
          
            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        talker=null;
+      
         
     }
   
