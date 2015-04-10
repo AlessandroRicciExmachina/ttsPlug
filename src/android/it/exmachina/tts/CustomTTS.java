@@ -20,6 +20,7 @@ public class CustomTTS extends CordovaPlugin {
 	private ListView resultList;
 	private Context contesto;
 	private String azione;
+	public String toSpeak;
 
 	@Override
 	public boolean execute(String action, final JSONArray args1,
@@ -60,13 +61,24 @@ public class CustomTTS extends CordovaPlugin {
 								if (b.equals("spagnolo")) {
 									tts.setLanguage(Locale.ITALIAN);
 								}
+								this.toSpeak=a;
 
 								// System.out.println(Locale.getDefault());
 							//	if (!tts.isSpeaking()) {
 								
 									new Thread(new Runnable() {
 								        public void run() {
-								        	tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+								        
+								        	tts.speak(this.toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+								        
+								        }
+								    }).start();
+								
+								
+								
+									new Thread(new Runnable() {
+								        public void run() {
+								        
 								        
 								        	while (tts.isSpeaking()) {
 
