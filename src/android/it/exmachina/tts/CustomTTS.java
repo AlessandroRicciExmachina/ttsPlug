@@ -87,31 +87,7 @@ public class CustomTTS extends CordovaPlugin {
 									
 									
 
-								}else{
-									
-									tts.stop();
-									
-									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
-									
-										new Thread(new Runnable() {
-								        public void run() {
-								        
-								        
-								        	while (tts.isSpeaking()) {
-
-																				
-												System.out.println(azione);
-
-											}
-								        	PluginResult result = new PluginResult(
-													PluginResult.Status.OK, "ok");
-											result.setKeepCallback(true);
-											callbackContext.sendPluginResult(result);
-								        }
-								    }).start();
-									
-									
-						      	}
+								}
 
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
