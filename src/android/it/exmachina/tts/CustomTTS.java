@@ -64,18 +64,10 @@ public class CustomTTS extends CordovaPlugin {
 								toSpeak=a;
 
 								// System.out.println(Locale.getDefault());
-							//	if (!tts.isSpeaking()) {
+								if (!tts.isSpeaking()) {
 								
-									new Thread(new Runnable() {
-								        public void run() {
+							                tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 								        
-								        	tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-								        
-								        }
-								    }).start();
-								
-								
-								
 									new Thread(new Runnable() {
 								        public void run() {
 								        
@@ -95,12 +87,31 @@ public class CustomTTS extends CordovaPlugin {
 									
 									
 
-							//	}else{
-							//			tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+								}else{
 									
-							//		System.out.println("speak");	
+									tts.stop();
 									
-							//	}
+									tts.speak(a, TextToSpeech.QUEUE_FLUSH, null);
+									
+										new Thread(new Runnable() {
+								        public void run() {
+								        
+								        
+								        	while (tts.isSpeaking()) {
+
+																				
+												System.out.println(azione);
+
+											}
+								        	PluginResult result = new PluginResult(
+													PluginResult.Status.OK, "ok");
+											result.setKeepCallback(true);
+											callbackContext.sendPluginResult(result);
+								        }
+								    }).start();
+									
+									
+						      	}
 
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
