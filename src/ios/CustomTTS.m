@@ -26,7 +26,7 @@
   
       AVSpeechUtterance* utter = [[AVSpeechUtterance alloc] initWithString:myarg];
     utter.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"it-IT"];
-    [utter setRate:0.2f];
+    [utter setRate:0.1f];
     if (!talker) {
         talker = [AVSpeechSynthesizer new];
        
